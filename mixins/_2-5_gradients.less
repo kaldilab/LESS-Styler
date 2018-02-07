@@ -1,0 +1,175 @@
+/* --------------------------------
+ex)#LG.s2(360deg, red, 20%, blue, 60%);
+ex)#LG.s2(360deg, red, 20%, blue, 60%, 0, 1);
+ex)#LGR.s2(360deg, red, 20%, blue, 60%);
+ex)#LGR.s2(360deg, red, 20%, blue, 60%, 0, 1);
+ex)#RG.s2(50% 50%, red, 20%, blue, 60%, @s: circle);
+ex)#RG.s2(50% 50%, red, 20%, blue, 60%, 0, 1, circle);
+ex)#RGR.s2(50% 50%, red, 20%, blue, 60%, @s: circle);
+ex)#RGR.s2(50% 50%, red, 20%, blue, 60%, 0, 1, circle);
+-------------------------------- */
+
+/* ================================
+LINEAR GRADIENT
+================================ */
+#LG {
+	.s2(@d, @c1, @x1, @c2, @x2, @a1:1, @a2:1) {
+		#STOP.s2();
+		background-image+: linear-gradient(@d, @s1, @s2);
+	}
+	.s3(@d, @c1, @x1, @c2, @x2, @c3, @x3, @a1:1, @a2:1, @a3:1) {
+		#STOP.s3();
+		background-image+: linear-gradient(@d, @s1, @s2, @s3);
+	}
+	.s4(@d, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @a1:1, @a2:1, @a3:1, @a4:1) {
+		#STOP.s4();
+		background-image+: linear-gradient(@d, @s1, @s2, @s3, @s4);
+	}
+	.s5(@d, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @c5, @x5, @a1:1, @a2:1, @a3:1, @a4:1, @a5:1) {
+		#STOP.s5();
+		background-image+: linear-gradient(@d, @s1, @s2, @s3, @s4, @s5);
+	}
+	.s6(@d, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @c5, @x5, @c6, @x6, @a1:1, @a2:1, @a3:1, @a4:1, @a5:1, @a6:1) {
+		#STOP.s6();
+		background-image+: linear-gradient(@d, @s1, @s2, @s3, @s4, @s5, @s6);
+	}
+	.s7(@d, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @c5, @x5, @c6, @x6, @c7, @x7, @a1:1, @a2:1, @a3:1, @a4:1, @a5:1, @a6:1, @a7:1) {
+		#STOP.s7();
+		background-image+: linear-gradient(@d, @s1, @s2, @s3, @s4, @s5, @s6, @s7);
+	}
+}
+
+/* ================================
+LINEAR GRADIENT - REPEATING
+================================ */
+#LGR {
+	.s2(@d, @c1, @x1, @c2, @x2, @a1:1, @a2:1) {
+		#STOP.s2();
+		background-image+: repeating-linear-gradient(@d, @s1, @s2);
+	}
+	.s3(@d, @c1, @x1, @c2, @x2, @c3, @x3, @a1:1, @a2:1, @a3:1) {
+		#STOP.s3();
+		background-image+: repeating-linear-gradient(@d, @s1, @s2, @s3);
+	}
+	.s4(@d, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @a1:1, @a2:1, @a3:1, @a4:1) {
+		#STOP.s4();
+		background-image+: repeating-linear-gradient(@d, @s1, @s2, @s3, @s4);
+	}
+	.s5(@d, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @c5, @x5, @a1:1, @a2:1, @a3:1, @a4:1, @a5:1) {
+		#STOP.s5();
+		background-image+: repeating-linear-gradient(@d, @s1, @s2, @s3, @s4, @s5);
+	}
+	.s6(@d, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @c5, @x5, @c6, @x6, @a1:1, @a2:1, @a3:1, @a4:1, @a5:1, @a6:1) {
+		#STOP.s6();
+		background-image+: repeating-linear-gradient(@d, @s1, @s2, @s3, @s4, @s5, @s6);
+	}
+	.s7(@d, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @c5, @x5, @c6, @x6, @c7, @x7, @a1:1, @a2:1, @a3:1, @a4:1, @a5:1, @a6:1, @a7:1) {
+		#STOP.s7();
+		background-image+: repeating-linear-gradient(@d, @s1, @s2, @s3, @s4, @s5, @s6, @s7);
+	}
+}
+
+/* ================================
+RADIAL GRADIENT
+================================ */
+#RG {
+	.s2(@p:50% 50%, @c1, @x1, @c2, @x2, @a1:1, @a2:1, @s:ellipse) {
+		#STOP.s2();
+		background-image+: radial-gradient(@s at @p, @s1, @s2);
+	}
+	.s3(@p:50% 50%, @c1, @x1, @c2, @x2, @c3, @x3, @a1:1, @a2:1, @a3:1, @s:ellipse) {
+		#STOP.s3();
+		background-image+: radial-gradient(@s at @p, @s1, @s2, @s3);
+	}
+	.s4(@p:50% 50%, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @a1:1, @a2:1, @a3:1, @a4:1, @s:ellipse) {
+		#STOP.s4();
+		background-image+: radial-gradient(@s at @p, @s1, @s2, @s3, @s4);
+	}
+	.s5(@p:50% 50%, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @c5, @x5, @a1:1, @a2:1, @a3:1, @a4:1, @a5:1, @s:ellipse) {
+		#STOP.s5();
+		background-image+: radial-gradient(@s at @p, @s1, @s2, @s3, @s4, @s5);
+	}
+	.s6(@p:50% 50%, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @c5, @x5, @c6, @x6, @a1:1, @a2:1, @a3:1, @a4:1, @a5:1, @a6:1, @s:ellipse) {
+		#STOP.s6();
+		background-image+: radial-gradient(@s at @p, @s1, @s2, @s3, @s4, @s5, @s6);
+	}
+	.s7(@p:50% 50%, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @c5, @x5, @c6, @x6, @c7, @x7, @a1:1, @a2:1, @a3:1, @a4:1, @a5:1, @a6:1, @a7:1, @s:ellipse) {
+		#STOP.s7();
+		background-image+: radial-gradient(@s at @p, @s1, @s2, @s3, @s4, @s5, @s6, @s7);
+	}
+}
+
+/* ================================
+RADIAL GRADIENT - REPEATING
+================================ */
+#RGR {
+	.s2(@p:50% 50%, @c1, @x1, @c2, @x2, @a1:1, @a2:1, @s:ellipse) {
+		#STOP.s2();
+		background-image+: repeating-radial-gradient(@s at @p, @s1, @s2);
+	}
+	.s3(@p:50% 50%, @c1, @x1, @c2, @x2, @c3, @x3, @a1:1, @a2:1, @a3:1, @s:ellipse) {
+		#STOP.s3();
+		background-image+: repeating-radial-gradient(@s at @p, @s1, @s2, @s3);
+	}
+	.s4(@p:50% 50%, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @a1:1, @a2:1, @a3:1, @a4:1, @s:ellipse) {
+		#STOP.s4();
+		background-image+: repeating-radial-gradient(@s at @p, @s1, @s2, @s3, @s4);
+	}
+	.s5(@p:50% 50%, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @c5, @x5, @a1:1, @a2:1, @a3:1, @a4:1, @a5:1, @s:ellipse) {
+		#STOP.s5();
+		background-image+: repeating-radial-gradient(@s at @p, @s1, @s2, @s3, @s4, @s5);
+	}
+	.s6(@p:50% 50%, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @c5, @x5, @c6, @x6, @a1:1, @a2:1, @a3:1, @a4:1, @a5:1, @a6:1, @s:ellipse) {
+		#STOP.s6();
+		background-image+: repeating-radial-gradient(@s at @p, @s1, @s2, @s3, @s4, @s5, @s6);
+	}
+	.s7(@p:50% 50%, @c1, @x1, @c2, @x2, @c3, @x3, @c4, @x4, @c5, @x5, @c6, @x6, @c7, @x7, @a1:1, @a2:1, @a3:1, @a4:1, @a5:1, @a6:1, @a7:1, @s:ellipse) {
+		#STOP.s7();
+		background-image+: repeating-radial-gradient(@s at @p, @s1, @s2, @s3, @s4, @s5, @s6, @s7);
+	}
+}
+
+/* ================================
+GRADIENT COLOR STOP
+================================ */
+#STOP {
+	.s2() {
+		@s1:rgba(red(@c1), green(@c1), blue(@c1), @a1) @x1;
+		@s2:rgba(red(@c2), green(@c2), blue(@c2), @a2) @x2;
+	}
+	.s3() {
+		@s1:rgba(red(@c1), green(@c1), blue(@c1), @a1) @x1;
+		@s2:rgba(red(@c2), green(@c2), blue(@c2), @a2) @x2;
+		@s3:rgba(red(@c3), green(@c3), blue(@c3), @a3) @x3;
+	}
+	.s4() {
+		@s1:rgba(red(@c1), green(@c1), blue(@c1), @a1) @x1;
+		@s2:rgba(red(@c2), green(@c2), blue(@c2), @a2) @x2;
+		@s3:rgba(red(@c3), green(@c3), blue(@c3), @a3) @x3;
+		@s4:rgba(red(@c4), green(@c4), blue(@c4), @a4) @x4;
+	}
+	.s5() {
+		@s1:rgba(red(@c1), green(@c1), blue(@c1), @a1) @x1;
+		@s2:rgba(red(@c2), green(@c2), blue(@c2), @a2) @x2;
+		@s3:rgba(red(@c3), green(@c3), blue(@c3), @a3) @x3;
+		@s4:rgba(red(@c4), green(@c4), blue(@c4), @a4) @x4;
+		@s5:rgba(red(@c5), green(@c5), blue(@c5), @a5) @x5;
+	}
+	.s6() {
+		@s1:rgba(red(@c1), green(@c1), blue(@c1), @a1) @x1;
+		@s2:rgba(red(@c2), green(@c2), blue(@c2), @a2) @x2;
+		@s3:rgba(red(@c3), green(@c3), blue(@c3), @a3) @x3;
+		@s4:rgba(red(@c4), green(@c4), blue(@c4), @a4) @x4;
+		@s5:rgba(red(@c5), green(@c5), blue(@c5), @a5) @x5;
+		@s6:rgba(red(@c6), green(@c6), blue(@c6), @a6) @x6;
+	}
+	.s7() {
+		@s1:rgba(red(@c1), green(@c1), blue(@c1), @a1) @x1;
+		@s2:rgba(red(@c2), green(@c2), blue(@c2), @a2) @x2;
+		@s3:rgba(red(@c3), green(@c3), blue(@c3), @a3) @x3;
+		@s4:rgba(red(@c4), green(@c4), blue(@c4), @a4) @x4;
+		@s5:rgba(red(@c5), green(@c5), blue(@c5), @a5) @x5;
+		@s6:rgba(red(@c6), green(@c6), blue(@c6), @a6) @x6;
+		@s7:rgba(red(@c7), green(@c7), blue(@c7), @a7) @x7;
+	}
+}

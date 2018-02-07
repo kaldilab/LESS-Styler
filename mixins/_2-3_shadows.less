@@ -1,0 +1,162 @@
+/* ================================
+BOX SHADOW
+================================ */
+#BS {
+	// INITIAL
+	.in(@in:none) {
+		box-shadow: @in;
+	}
+	// --------------------------------
+	// ALPHA
+	#A {
+		// HORIZONTAL
+		.h(@h:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: @h 0 @rgba @i;
+		}
+		// VERTICAL
+		.v(@v:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: 0 @v @rgba @i;
+		}
+		// BLUR
+		.b(@b:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: 0 0 @b @rgba @i;
+		}
+		// SPREAD
+		.s(@s:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: 0 0 0 @s @rgba @i;
+		}
+		// --------------------------------
+		.hv(@h:1px, @v:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: @h @v @rgba @i;
+		}
+		.hb(@h:1px, @b:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: @h 0 @b @rgba @i;
+		}
+		.vb(@v:1px, @b:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: 0 @v @b @rgba @i;
+		}
+		.hs(@h:1px, @s:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: @h 0 0 @s @rgba @i;
+		}
+		.vs(@v:1px, @s:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: 0 @v 0 @s @rgba @i;
+		}
+		.bs(@b:1px, @s:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: 0 0 @b @s @rgba @i;
+		}
+		.hvb(@h:1px, @v:1px, @b:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: @h @v @b @rgba @i;
+		}
+		.hvs(@h:1px, @v:1px, @s:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: @h @v 0 @s @rgba @i;
+		}
+		.hvbs(@h:1px, @v:1px, @b:1px, @s:1px, @c:@c-0, @i:e('')) {
+			.rgba(@c, @a);
+			box-shadow+: @h @v @b @s @rgba @i;
+		}
+	}
+	// --------------------------------
+	.BS-alpha-loop(@n) {
+		& when (@n < 10) {
+			#A@{n} {
+				@a: @n * 0.1;
+				#BS#A;
+			}
+			.BS-alpha-loop(@n + 1);
+		}
+		& when (@n = 0) {
+			#A0 {
+				@a: @n;
+				#BS#A;
+			}
+		}
+		& when (@n = 10) {
+			#AA {
+				@a: 1;
+				#BS#A;
+			}
+		}
+	}
+	.BS-alpha-loop(0);
+}
+
+/* ================================
+TEXT SHADOW
+================================ */
+#TS {
+	// INITIAL
+	.in(@in:none) {
+		text-shadow: @in;
+	}
+	// --------------------------------
+	// ALPHA
+	#A {
+		// HORIZONTAL
+		.h(@h:1px, @c:@c-0) {
+			.rgba(@c, @a);
+			text-shadow+:@h 0 @rgba;
+		}
+		// VERTICAL
+		.v(@v:1px, @c:@c-0) {
+			.rgba(@c, @a);
+			text-shadow+:0 @v @rgba;
+		}
+		// BLUR
+		.b(@b:1px, @c:@c-0) {
+			.rgba(@c, @a);
+			text-shadow+:0 0 @b @rgba;
+		}
+		// --------------------------------
+		.hv(@h:1px, @v:1px, @c:@c-0) {
+			.rgba(@c, @a);
+			text-shadow+:@h @v @rgba;
+		}
+		.hb(@h:1px, @b:1px, @c:@c-0) {
+			.rgba(@c, @a);
+			text-shadow+:@h 0 @b @rgba;
+		}
+		.vb(@v:1px, @b:1px, @c:@c-0) {
+			.rgba(@c, @a);
+			text-shadow+:0 @v @b @rgba;
+		}
+		.hvb(@h:1px, @v:1px, @b:1px, @c:@c-0) {
+			.rgba(@c, @a);
+			text-shadow+:@h @v @b @rgba;
+		}
+	}
+	// --------------------------------
+	.TS-alpha-loop(@i) {
+		& when (@i < 10) {
+			#A@{i} {
+				@a: @i * 0.1;
+				#TS#A;
+			}
+			.TS-alpha-loop(@i + 1);
+		}
+		& when (@i = 0) {
+			#A0 {
+				@a: @i;
+				#TS#A;
+			}
+		}
+		& when (@i = 10) {
+			#AA {
+				@a: 1;
+				#TS#A;
+			}
+		}
+	}
+	.TS-alpha-loop(0);
+}

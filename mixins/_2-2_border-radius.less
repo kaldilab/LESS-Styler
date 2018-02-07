@@ -1,0 +1,71 @@
+/* ================================
+BORDER RADIUS
+================================ */
+#BR {
+	// INITIAL
+	.in(@in:initial) {
+		border-radius: @in;
+	}
+	.in-a1(@in:initial) {
+		border-top-left-radius: @in;
+	}
+	.in-a2(@in:initial) {
+		border-top-right-radius: @in;
+	}
+	.in-a3(@in:initial) {
+		border-bottom-right-radius: @in;
+	}
+	.in-a4(@in:initial) {
+		border-bottom-left-radius: @in;
+	}
+	// --------------------------------
+	// ANGLE
+	.a1(@r:5px) {
+		border-top-left-radius: @r;
+	}
+	.a2(@r:5px) {
+		border-top-right-radius: @r;
+	}
+	.a3(@r:5px) {
+		border-bottom-right-radius: @r;
+	}
+	.a4(@r:5px) {
+		border-bottom-left-radius: @r;
+	}
+	// --------------------------------
+	// SIDE
+	.t(@r:5px) {
+		#BR.a1(@r);
+		#BR.a2(@r);
+	}
+	.b(@r:5px) {
+		#BR.a4(@r);
+		#BR.a3(@r);
+	}
+	.l(@r:5px) {
+		#BR.a1(@r);
+		#BR.a4(@r);
+	}
+	.r(@r:5px) {
+		#BR.a2(@r);
+		#BR.a3(@r);
+	}
+	// --------------------------------
+	// ALL
+	.all(@r1:5px, @r2:null, @r3:5px, @r4:5px) {
+		& when (@r2=null) {
+			border-radius: @r1;
+		}
+		& when not (@r2=null) {
+			#BR.a1(@r1);
+			#BR.a2(@r2);
+			#BR.a3(@r3);
+			#BR.a4(@r4);
+		}
+	}
+	// --------------------------------
+	// CIRCLE
+	.cc(@r:50%) {
+		border-radius: @r;
+	}
+}

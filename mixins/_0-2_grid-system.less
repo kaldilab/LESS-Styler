@@ -1,0 +1,23 @@
+/* ================================
+GRID SYSTEM
+================================ */
+// STATIC WIDTH
+@sw: 1280px;
+// FLUID WIDTH
+@fw: 100%;
+// NUMBER OF COLUMNS
+@nc: 12;
+// WIDTH OF 1 COLUMN
+@wc: @sw / @nc;
+// GUTTER WIDTH
+@gw: 20px;
+// COLUMN WIDTH
+@cw: @wc - @gw;
+// DIVIDE GUTTER WIDTH
+@dw: @gw * 0.5;
+// GUTTER WIDTH PERCENT
+@gwp: (@gw * 100%) / @sw;
+// COLUMN WIDTH PERCENT
+@cwp: (@cw * 100%) / @sw;
+// DIVIDE GUTTER WIDTH PERCENT
+@dwp: @gwp * 0.5;

@@ -1,0 +1,381 @@
+/* Map */
+// --------------------------------
+@ff-ko: 'Apple SD Gothic Neo', '맑은 고딕', 'Malgun Gothic', '돋움', 'Dotum', sans-serif;
+@ff-code: 'Menlo', 'Monaco', 'Consolas', 'Courier New', 'Courier', monospace;
+
+.ls-panel {
+	.cf();
+	.por();
+	.mb(1rem);
+	.pb(1rem);
+
+	&.scroll {
+		@calc: e('100% - 200px');
+		.pof2();
+		.w(-webkit-calc(@calc));
+		.w(-moz-calc(@calc));
+		.w(calc(@calc));
+		.p(1rem);
+		.zi(99);
+		#BO#AA.il(@s-, 95%);
+
+		h2 {
+			.t(1rem);
+			.l(1rem);
+		}
+		#lsColorInfo {
+			.t(1rem);
+			.r(1rem);
+		}
+	}
+	h2 {
+		.poa1();
+		.fs(2rem);
+		.fw(700);
+		.p(1rem);
+		.ca(@s-);
+
+		@media @max-768 {
+			.di(n);
+		}
+		span {
+			.fs(1.1rem);
+			.fw(700);
+			.ba(@s-);
+			.plr(.5rem);
+			.va();
+			#CO#AA.il(@s-);
+			#BR.all(.3rem);
+		}
+	}
+	#lsColorForm {
+		.cf();
+		.ta(c);
+		.ov();
+
+		label {
+			.u-he();
+		}
+		input {
+			.wh(4rem, 4rem);
+			.di(ib);
+			.fs(1.4rem);
+			.ba(@s-);
+			.ta(c);
+			.va();
+			#CO#AA.il(@s-);
+			#BR.all(.4rem);
+		}
+		#lsColorText {
+			.w(200px);
+			.u-ph(@s-);
+			#BD#AA.all(.1rem, @s-);
+
+			&:focus {
+				.fw(700);
+				.ba(@c-f);
+				.ca(@c-1);
+			}
+		}
+		#lsColorSubmit {
+			.u-fa();
+			.cu();
+
+			&:hover {
+				#BO#AA.il(@s-, 50%);
+			}
+			&:active {
+				.ca(@s-);
+				#BO#AA.il(@s-, 80%);
+			}
+		}
+		.sp-replacer {
+			.wh(4rem, 4rem, 4rem);
+			.di(ib);
+			.ta(c);
+			.va();
+			.p(0);
+			#BG.in();
+			#BD#AA.all(.1rem, @s-);
+			#BR.all(.4rem);
+
+			@media @max-768 {
+				.di(n);
+			}
+			.sp-preview {
+				.ba(@s-);
+				.wh(100%);
+				#BD.in();
+
+				.sp-preview-inner {
+					.fs(1.4rem);
+					#CO#AA.il(@s-, 100%);
+
+					&::before {
+						.u-fa('\f1fb');
+					}
+				}
+			}
+			.sp-dd {
+				.di(n);
+			}
+		}
+	}
+	#lsColorInfo {
+		.poa2();
+
+		@media @max-1024 {
+			.pos();
+			.mt(2rem);
+			.ta(c);
+		}
+		#lsParentColor {
+			.di(ib);
+			.va();
+
+			li {
+				.di(ib);
+				.ff(@ff-code);
+				.fs(1.2rem);
+				.fw(300);
+				.h(4rem, 4rem);
+				.plr(1rem);
+				.ta(c);
+				.va();
+				#BR.all(.4rem);
+
+				br {
+					.di(n);
+				}
+				span {
+					.di(ib);
+					.tt();
+				}
+				&#previousColor {
+					#BD#AA.all(.1rem, @s: dashed);
+					#TS#AA.b(.1rem, @c-1);
+					.di(n);
+				}
+				&.current-color {
+					.ba(@s-);
+					#CO#AA.il(@s-);
+				}
+			}
+		}
+		#lsChildColor {
+			.di(ib);
+			.fs(1.6rem);
+			.fw(300);
+			.wh(4rem);
+			.ta(c);
+			.va();
+			.ba(@s-);
+			.cu();
+			#CO#AA.il(@s-);
+			#BR.all(.4rem);
+
+			&:hover {
+				#BO#AA.il(@s-, 50%);
+			}
+			&:active {
+				.ca(@s-);
+				#BO#AA.il(@s-, 80%);
+			}
+		}
+	}
+}
+.ls-familytree, .ls-wheel, .ls-scheme {
+	.cf();
+	.ta(c);
+	.mb(3rem);
+
+	h3 {
+		.fs(1.5rem);
+		.fw(700);
+		.mtb(2rem);
+		.tt();
+		#CO#AA.il(@s-, 50%);
+	}
+	h4 {
+		.fs(1.3rem);
+		.fw(700);
+		.mb(1rem);
+		.ca(@s-);
+	}
+	.chip-group {
+		.cf();
+		.ov();
+		.mb(.1rem);
+		#BR.all(.5rem);
+		#FC.ffh();
+
+		&.last {
+			.mb(2rem);
+		}
+		.chip {
+			.por();
+			.w(5.5rem);
+			.ptb(.5rem);
+			.fs(1rem);
+			.lh(1.2);
+			.cu(default);
+			#FI.f();
+
+			&.title {
+				.ba(@s-);
+				#CO#AA.il(@s-, 100%);
+
+				em {
+					.di(b);
+					.ff(@ff-ko);
+					.fw(700);
+					.mt(.2rem);
+				}
+			}
+			b, span {
+				.di(ib);
+				.p(.1rem .2rem);
+				#CO#A4.il(@s-);
+				#TS#AA.hv(.1rem, .1rem, @s-);
+				#BR.all(.1rem);
+				#TF.sc(.9);
+			}
+			b {
+				.ff(@ff-code);
+			}
+			span {
+				.tt();
+				.vi();
+
+				&.show {
+					.vi(visible);
+				}
+			}
+			&:hover {
+				&.title {
+					#BO#AA.il(@s-, 50%);
+				}
+				b, span {
+					.ba(@s-);
+					#CO#AA.il(@s-);
+				}
+				span {
+					.vi(visible);
+				}
+			}
+		}
+	}
+}
+.ls-wheel {
+	@media @max-540 {
+		.di(n);
+	}
+	.wheel-group {
+		.cf();
+		.ov();
+
+		li {
+			.por();
+			.fl(l);
+			.wh(50%, 500px);
+			.mb(1rem);
+			#TT#F28.t();
+
+			@media @max-960 {
+				.fl(n);
+				.w(100%);
+			}
+			button {
+				.poa1(50%, 50%);
+				.wh(6rem);
+				.mt(-3rem);
+				.ml(-3rem);
+				.ba(@s-);
+				.cu();
+				.ff(@ff-ko);
+				.fs(1.2rem);
+				.zi(20);
+				#CO#AA.il(@s-, 100%);
+				#BR.cc();
+
+				&:hover {
+					#BO#AA.il(@s-, 50%);
+				}
+			}
+			.wheel {
+				.poa1(50px, 50%);
+				.wh(40px, 200px);
+				.ml(-20px);
+				#TF.or(50%, 100%);
+				#BD#A0.t(1rem, @c-0);
+
+				&.title {
+					.ba(@s-);
+				}
+				b {
+					.poa1(-15%, 0);
+					.fs(1rem);
+					.ff(@ff-code);
+					.ca(@s-);
+					.p(.2rem);
+					.cu(default);
+					#BD#AA.all(.1rem, @s-);
+					#BR.all(.2rem);
+				}
+				&:hover {
+					.zi(15);
+					#BD#AA.all(.1rem, @s-);
+					#BD#AA.t(1rem, @s-);
+
+					b {
+						.ba(@s-);
+						#CO#AA.il(@s-, 100%);
+					}
+				}
+			}
+			&.hue {
+				.wheel {
+					.w(10px);
+					.ml(-5px);
+
+					b {
+						.ff(@ff-ko);
+					}
+					&:nth-child(odd) {
+						b {
+							.t(-25%);
+						}
+					}
+				}
+			}
+			&.spin {
+				#TF.ro(180deg);
+			}
+		}
+	}
+}
+.ls-scheme {
+	.mb(0);
+
+	.composition {
+		.fl(l);
+		.w(23%);
+		.mlr(1%);
+		.mb(2rem);
+
+		@media @max-1440 {
+			.w(48%);
+		}
+		@media @max-768 {
+			.w(98%);
+		}
+		.chip-group {
+			#BR.in();
+
+			.chip {
+				.w(5rem);
+				#BR.all(.3rem);
+			}
+		}
+	}
+}

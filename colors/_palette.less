@@ -1,0 +1,37 @@
+@import "../mixins/_mixins.less";
+@import "_palette_chips.less";
+@import "_palette_map.less";
+// --------------------------------
+@scheme: hotpink;
+
+// --------------------------------
+* {
+	.bs();
+}
+input, button {
+	.p();
+	#BD.in();
+}
+// --------------------------------
+html {
+	.fs(10px);
+}
+body {
+	.fs(1.6rem);
+	.ff(@ap01);
+	.ff(@ko01);
+	.ff(@ss00);
+	.fw(300);
+	.ba(@s-lu11);
+}
+
+/* Palette */
+// --------------------------------
+.ls-palette {
+	.wrap(1440px);
+	.p(2rem);
+
+	@media @max-768 {
+		.p(1rem);
+	}
+}

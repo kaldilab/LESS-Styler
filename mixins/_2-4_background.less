@@ -1,0 +1,134 @@
+/* ================================
+BACKGROUND
+================================ */
+#BG {
+	// INITIAL
+	.in(@in:none) {
+		background: @in;
+	}
+	.in-c(@in:transparent) {
+		background-color: @in;
+	}
+	.in-i(@in:none) {
+		background-image: @in;
+	}
+	// --------------------------------
+	// COLOR
+	.co(@c:@c-0, @a:1) {
+		.rgba(@c, @a);
+		background-color: @rgba;
+	}
+	// IMAGE
+	.im(@i) {
+		background-image+: @i;
+	}
+	// REPEAT
+	.re(@r:no-repeat) {
+		background-repeat: @r;
+	}
+	// POSITION
+	.po(@p:center) {
+		background-position: @p;
+	}
+	// ATTACHMENT
+	.at(@a:fixed) {
+		background-attachment: @a;
+	}
+	// SIZE
+	.si(@s:cover) {
+		background-size: @s;
+	}
+	// ORIGIN
+	.or(@o:content-box) {
+		background-origin: @o;
+	}
+	// CLIP
+	.cl(@c:content-box) {
+		background-clip: @c;
+	}
+	// --------------------------------
+	// MULTIPLE
+	.m(@m) {
+		background+: @m;
+	}
+	// (with)GRADIENT
+	.g(@c:@c-t, @i:null, @p:center, @r:no-repeat, @a:scroll) {
+		background+:@c @i;
+		background-color:@c;
+		background-image+:@i;
+		background-repeat: @r;
+		background-position: @p;
+		background-attachment: @a;
+	}
+	// --------------------------------
+	.i(@i) {
+		background+_: @i;
+	}
+	.r(@r:no-repeat) {
+		background+_: @r;
+	}
+	.p(@p:center) {
+		background+_: @p;
+	}
+	.a(@a:fixed) {
+		background+_: @a;
+	}
+	// --------------------------------
+	.ir(@i, @r:no-repeat) {
+		#BG.i(@i);
+		#BG.r(@r);
+	}
+	.ip(@i, @p:center) {
+		#BG.i(@i);
+		#BG.p(@p);
+	}
+	.ia(@i, @a:fixed) {
+		#BG.i(@i);
+		#BG.a(@a);
+	}
+	.irp(@i, @p:center, @r:no-repeat) {
+		#BG.ir(@i, @r);
+		#BG.p(@p);
+	}
+	.ira(@i, @r:no-repeat, @a:fixed) {
+		#BG.ir(@i, @r);
+		#BG.a(@a);
+	}
+	.ipa(@i, @p:center, @a:fixed) {
+		#BG.ip(@i, @p);
+		#BG.a(@a);
+	}
+	.irpa(@i, @p:center, @r:no-repeat, @a:fixed) {
+		#BG.irp(@i, @p, @r);
+		#BG.a(@a);
+	}
+	// --------------------------------
+	.isr(@i, @s:cover, @r:no-repeat) {
+		#BG.ir(@i, @r);
+		#BG.si(@s);
+	}
+	.isp(@i, @s:cover, @p:center) {
+		#BG.ip(@i, @p);
+		#BG.si(@s);
+	}
+	.isa(@i, @s:cover, @a:fixed) {
+		#BG.ia(@i, @a);
+		#BG.si(@s);
+	}
+	.isrp(@i, @s:cover, @p:center, @r:no-repeat) {
+		#BG.irp(@i, @p, @r);
+		#BG.si(@s);
+	}
+	.isra(@i, @s:cover, @r:no-repeat, @a:fixed) {
+		#BG.ira(@i, @r, @a);
+		#BG.si(@s);
+	}
+	.ispa(@i, @s:cover, @p:center, @a:fixed) {
+		#BG.ipa(@i, @p, @a);
+		#BG.si(@s);
+	}
+	.isrpa(@i, @s:cover, @p:center, @r:no-repeat, @a:fixed) {
+		#BG.irpa(@i, @p, @r, @a);
+		#BG.si(@s);
+	}
+}

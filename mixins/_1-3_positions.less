@@ -1,0 +1,177 @@
+/* ================================
+POSITIONS
+================================ */
+// TOP
+.t(@t:0) {
+	top: @t;
+}
+// BOTTOM
+.b(@b:0) {
+	bottom: @b
+}
+// LEFT
+.l(@l:0) {
+	left: @l;
+}
+// RIGHT
+.r(@r:0) {
+	right: @r;
+}
+// --------------------------------
+.tb(@t:0, @b:null) {
+	& when (@b=null) {
+		top: @t;
+		bottom: @t;
+	}
+	& when not (@b=null) {
+		top: @t;
+		bottom: @b;
+	}
+}
+.lr(@l:0, @r:null) {
+	& when (@r=null) {
+		left: @l;
+		right: @l;
+	}
+	& when not (@r=null) {
+		left: @l;
+		right: @r;
+	}
+}
+.tl(@t:0, @l:null) {
+	& when (@l=null) {
+		top: @t;
+		left: @t;
+	}
+	& when not (@l=null) {
+		top: @t;
+		left: @l;
+	}
+}
+.tr(@t:0, @r:null) {
+	& when (@r=null) {
+		top: @t;
+		right: @t;
+	}
+	& when not (@r=null) {
+		top: @t;
+		right: @r;
+	}
+}
+.bl(@b:0, @l:null) {
+	& when (@l=null) {
+		bottom: @b;
+		left: @b;
+	}
+	& when not (@l=null) {
+		bottom: @b;
+		left: @l;
+	}
+}
+.br(@b:0, @r:null) {
+	& when (@r=null) {
+		bottom: @b;
+		right: @b;
+	}
+	& when not (@r=null) {
+		bottom: @b;
+		right: @r;
+	}
+}
+.tblr(@t:0, @b:null, @l:0, @r:0) {
+	& when (@b=null) {
+		top: @t;
+		bottom: @t;
+		left: @t;
+		right: @t;
+	}
+	& when not (@b=null) {
+		top: @t;
+		bottom: @b;
+		left: @l;
+		right: @r;
+	}
+}
+// --------------------------------
+// POSITION
+.po(@p:initial) {
+	position: @p;
+}
+.poa() {
+	position: absolute;
+}
+.pof() {
+	position: fixed;
+}
+.por() {
+	position: relative;
+}
+.pos() {
+	position: static;
+}
+// --------------------------------
+// POSITIONS - absolute
+.poa1(@t:0, @l:null) {
+	.tl(@t, @l);
+	position: absolute;
+}
+.poa2(@t:0, @r:null) {
+	.tr(@t, @r);
+	position: absolute;
+}
+.poa3(@b:0, @r:null) {
+	.br(@b, @r);
+	position: absolute;
+}
+.poa4(@b:0, @l:null) {
+	.bl(@b, @l);
+	position: absolute;
+}
+.poa-all(@t:0, @b:null, @l:0, @r:null) {
+	.tblr(@t, @b, @l, @r);
+	position: absolute;
+}
+// --------------------------------
+// POSITIONS - fixed
+.pof1(@t:0, @l:null) {
+	.tl(@t, @l);
+	position: fixed;
+}
+.pof2(@t:0, @r:null) {
+	.tr(@t, @r);
+	position: fixed;
+}
+.pof3(@b:0, @r:null) {
+	.br(@b, @r);
+	position: fixed;
+}
+.pof4(@b:0, @l:null) {
+	.bl(@b, @l);
+	position: fixed;
+}
+.pof-all(@t:0, @b:null, @l:0, @r:null) {
+	.tblr(@t, @b, @l, @r);
+	position: fixed;
+}
+// --------------------------------
+// POSITIONS - relative
+.por1(@t:0, @l:null) {
+	.tl(@t, @l);
+	position: relative;
+}
+.por2(@t:0, @r:null) {
+	.tr(@t, @r);
+	position: relative;
+}
+.por3(@b:0, @r:null) {
+	.br(@b, @r);
+	position: relative;
+}
+.por4(@b:0, @l:null) {
+	.bl(@b, @l);
+	position: relative;
+}
+.por-all(@t:0, @b:null, @l:0, @r:null) {
+	.tblr(@t, @b, @l, @r);
+	position: relative;
+}

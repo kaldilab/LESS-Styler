@@ -1,0 +1,207 @@
+/* ================================
+SHORTCUT
+================================ */
+// FONT SIZE
+.fs(@f:10px) {
+	font-size: @f;
+}
+// FONT WEIGHT
+.fw(@f:bold) {
+	font-weight: @f;
+}
+// FONT FAMILY
+.ff(@f:@ss00) {
+	font-family+: @f;
+}
+// LETTER SPACING
+.ls(@l:10px) {
+	letter-spacing: @l;
+}
+// WORD SPACING
+.ws(@w:1px) {
+	word-spacing: @w;
+}
+// WORD BREAK
+.wb(@w:keep-all) {
+	word-break: @w;
+}
+// LINE HEIGHT
+.lh(@l:1.2) {
+	line-height: @l;
+}
+// TEXT DECORATION
+.td(@t:underline) {
+	text-decoration: @t;
+}
+// TEXT TRANSFORM
+.tt(@t:uppercase) {
+	text-transform: @t;
+}
+// VERTICAL ALIGN
+.va(@v:middle) {
+	vertical-align: @v;
+}
+// TEXT INDENT
+.ti(@t:10px) {
+	text-indent: @t;
+}
+// OUTLINE OFFSET
+.oo(@o:5px) {
+	outline-offset: @o;
+}
+// Z-INDEX
+.zi(@z:1) {
+	z-index: @z;
+}
+// FONT STYLE
+.fsy(@f:italic) {
+	font-style: @f;
+}
+// WHITE SPACE
+.wsa(@w:nowrap) {
+	white-space: @w;
+}
+// LIST STYLE
+.lsy(@l:disc, @p:inside, @i:none) {
+	list-style: @l @p @i;
+}
+// --------------------------------
+// CLEAR
+.cl(@c:both) {
+	clear: @c;
+}
+// VISIBILITY
+.vi(@p:hidden) {
+	visibility: @p;
+}
+// CURSOR
+.cu(@c:pointer) {
+	cursor: @c;
+}
+// OVERFLOW
+.ov(@o:hidden) {
+	overflow: @o;
+}
+// OVERFLOW-X
+.ovx(@o:auto) {
+	overflow-x: @o;
+}
+// OVERFLOW-Y
+.ovy(@o:auto) {
+	overflow-y: @o;
+}
+// OPACITY
+.op(@o:0) {
+	opacity: @o;
+}
+// CONTENT
+.co(@c:'') {
+	content: @c;
+}
+// OUTLINE
+.ou(@o:none) {
+	outline: @o;
+}
+// FILTER
+.fi(@f:none) {
+	filter: @f;
+}
+// WILL CHANGE
+.wc(@w: transform) {
+	will-change: @w;
+}
+// RESIZE
+.re(@r:none) {
+	resize: @r;
+}
+// --------------------------------
+// TEXT ALIGN
+.ta(@x:in, @t:initial) {
+	& when (@x=in) {
+		text-align: @t;
+	}
+	& when (@x=c) {
+		text-align: center;
+	}
+	& when (@x=l) {
+		text-align: left;
+	}
+	& when (@x=r) {
+		text-align: right;
+	}
+	& when (@x=j) {
+		text-align: justify;
+	}
+}
+// --------------------------------
+// FLOAT
+.fl(@x:in, @f:initial) {
+	& when (@x=in) {
+		float: @f;
+	}
+	& when (@x=l) {
+		float: left;
+	}
+	& when (@x=r) {
+		float: right;
+	}
+	& when (@x=n) {
+		float: none;
+	}
+}
+// --------------------------------
+// DISPLAY
+.di(@x:in, @d:initial) {
+	& when (@x=in) {
+		display: @d;
+	}
+	& when (@x=b) {
+		display: block;
+	}
+	& when (@x=i) {
+		display: inline;
+	}
+	& when (@x=ib) {
+		display: inline-block;
+	}
+	& when (@x=if) {
+		display: inline-flex;
+	}
+	& when (@x=li) {
+		display: list-item;
+	}
+	& when (@x=n) {
+		display: none;
+	}
+}
+// --------------------------------
+// BOX SIZING
+.bs(@bs:border-box) {
+	box-sizing: @bs;
+}
+// HYPHENS
+.hy(@hy:auto) {
+	-webkit-hyphens: @hy;
+	hyphens: @hy;
+}
+// BACKFACE VISIBILITY
+.bv(@bv:hidden) {
+	-webkit-backface-visibility: @bv;
+	backface-visibility: @bv;
+}
+// TEXT SIZE ADJUST
+.ts(@ts:100%) {
+	-webkit-text-size-adjust: @ts;
+	text-size-adjust: @ts;
+}
+// OVERFLOW SCROLLING
+.os(@os:touch) {
+	-webkit-overflow-scrolling: @os;
+	overflow-scrolling: @os;
+}
+// APPEARANCE
+.ap(@ap:none) {
+	-webkit-appearance: @ap;
+	-moz-appearance: @ap;
+	appearance: @ap;
+}

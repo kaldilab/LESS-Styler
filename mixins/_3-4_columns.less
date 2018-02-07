@@ -1,0 +1,67 @@
+/* ================================
+COLUMNS
+================================ */
+#CL {
+	// INITIAL
+	.in(@in:initial) {
+		columns: @in;
+	}
+	.in-c(@in:initial) {
+		column-count: @in;
+	}
+	.in-w(@in:initial) {
+		column-width: @in;
+	}
+	.in-g(@in:initial) {
+		column-gap: @in;
+	}
+	// --------------------------------
+	// COLUMNS
+	.columns(@co:2, @wi: auto) {
+		columns: @wi @co;
+	}
+	// --------------------------------
+	// COUNT
+	.co(@c:auto) {
+		column-count: @c;
+	}
+	// WIDTH
+	.wi(@w:auto) {
+		column-width: @w;
+	}
+	// GAP
+	.ga(@g:10px) {
+		column-gap: @g;
+	}
+	// RULE
+	.ru(@w:1px, @c:@c-0, @s:solid, @a:1) {
+		.rgba(@c, @a);
+		column-rule: @w @s @rgba;
+	}
+	// SPAN(Except Mozilla) - none, all
+	.sp(@s:all) {
+		-webkit-column-span: @s;
+		column-span: @s;
+	}
+	// FILL - balance, auto
+	.fi(@f:auto) {
+		column-fill: @f;
+	}
+	// --------------------------------
+	.c(@co:2, @wi:auto) {
+		#CL.columns(@wi, @co);
+	}
+	.cg(@co:2, @wi:auto, @g:10px) {
+		#CL.columns(@wi, @co);
+		#CL.ga(@g);
+	}
+	.cr(@co:2, @wi:auto, @w:1px, @c:@c-0, @s:solid, @a:1) {
+		#CL.columns(@wi, @co);
+		#CL.ru(@w, @c, @s, @a);
+	}
+	.cgr(@co:2, @wi:auto, @g:10px, @w:1px, @c:@c-0, @s:solid, @a:1) {
+		#CL.columns(@wi, @co);
+		#CL.ga(@g);
+		#CL.ru(@w, @c, @s, @a);
+	}
+}

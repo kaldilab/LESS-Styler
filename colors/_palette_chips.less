@@ -1,0 +1,80 @@
+/* Chips */
+// --------------------------------
+.chip-loop-1(@i) when (@i <= 12) {
+	@chip-names: lu, ld, su, sd, gu, gd;
+
+	.chip-name-loop(@j:length(@chip-names)) when (@j > 0) {
+		.chip-name-loop(@j - 1);
+		@chip-name: extract(@chip-names, @j);
+
+		.s-@{chip-name}@{i} {
+			@chip:'s-@{chip-name}@{i}';
+			.ba(@@chip);
+		}
+	}
+	.chip-name-loop();
+	.chip-loop-1(@i + 1);
+}
+.chip-loop-1(1);
+// --------------------------------
+.chip-loop-2(@i) when (@i <= 24) {
+	@chip-names: il, is, ig;
+
+	.chip-name-loop(@j:length(@chip-names)) when (@j > 0) {
+		.chip-name-loop(@j - 1);
+		@chip-name: extract(@chip-names, @j);
+
+		.s-@{chip-name}@{i} {
+			@chip:'s-@{chip-name}@{i}';
+			.ba(@@chip);
+		}
+	}
+	.chip-name-loop();
+	.chip-loop-2(@i + 1);
+}
+.chip-loop-2(1);
+// --------------------------------
+.chip-loop-3(@i) when (@i <= 99) {
+	@chip-names: h, ih;
+
+	.chip-name-loop(@j:length(@chip-names)) when (@j > 0) {
+		.chip-name-loop(@j - 1);
+		@chip-name: extract(@chip-names, @j);
+
+		.s-@{chip-name}@{i} {
+			@chip:'s-@{chip-name}@{i}';
+			.ba(@@chip);
+		}
+	}
+	.chip-name-loop();
+	.chip-loop-3(@i + 1);
+}
+.chip-loop-3(1);
+// --------------------------------
+.wheel-loop-1(@i) when (@i <= 99) {
+	.w-ih@{i} {
+		@wheel:'s-ih@{i}';
+		background-color: @@wheel;
+		#TF.ro(3.6deg * @i);
+	}
+	.wheel-loop-1(@i + 1);
+}
+.wheel-loop-1(1);
+// --------------------------------
+.wheel-loop-2(@i) when (@i <= 24) {
+	@wheel-names: il, is, ig;
+
+	.wheel-name-loop(@j:length(@wheel-names)) when (@j > 0) {
+		.wheel-name-loop(@j - 1);
+		@wheel-name: extract(@wheel-names, @j);
+
+		.w-@{wheel-name}@{i} {
+			@wheel:'s-@{wheel-name}@{i}';
+			background-color: @@wheel;
+			#TF.ro(14.4deg * @i);
+		}
+	}
+	.wheel-name-loop();
+	.wheel-loop-2(@i + 1);
+}
+.wheel-loop-2(1);

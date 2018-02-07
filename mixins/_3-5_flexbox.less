@@ -1,0 +1,218 @@
+/* ================================
+FLEXBOX - FLEXBOX CONTAINER
+================================ */
+#FC {
+	// INITIAL
+	.in(@in:block) {
+		display: @in;
+	}
+	.in-d(@in:initial) {
+		-ms-flex-direction: @in;
+		flex-direction: @in;
+	}
+	.in-h(@in:initial) {
+		-ms-justify-content: @in;
+		justify-content: @in;
+	}
+	.in-v(@in:initial) {
+		-ms-align-items: @in;
+		align-items: @in;
+	}
+	.in-w(@in:initial) {
+		-ms-flex-wrap: @in;
+		flex-wrap: @in;
+	}
+	.in-a(@in:initial) {
+		-ms-align-content: @in;
+		align-content: @in;
+	}
+	.in-f(@in:initial) {
+		-ms-flex-flow: @in;
+		flex-flow: @in;
+	}
+	// --------------------------------
+	// FLEXBOX - flex, inline-flex
+	.flex(@f:flex) {
+		display:e('-webkit-@{f}');
+		display:e('-ms-@{f}box');
+		display:e('-ms-@{f}');
+		display: @f;
+	}
+	// DIRECTION - row, row-reverse, column, column-reverse
+	.di(@d:row) {
+		flex-direction: @d;
+	}
+	// JUSTIFY CONTENT(Horizontal) - flex-start, flex-end, center, space-between, space-around
+	.ho(@h:center) {
+		justify-content: @h;
+	}
+	// ALIGN ITEMS(Vertical) - flex-start, flex-end, center, baseline, stretch
+	.ve(@v:center) {
+		align-items: @v;
+	}
+	// WRAP - nowrap, wrap, wrap-reverse
+	.wr(@w:wrap) {
+		flex-wrap: @w;
+	}
+	// ALIGN CONTENT(Align) - flex-start, flex-end, center, space-between, space-around, stretch
+	.al(@a:center) {
+		align-content: @a;
+	}
+	// FLOW(Direction Wrap) - row, row-reverse, column, column-reverse | nowrap, wrap, wrap-reverse
+	.fl(@f1:row wrap, @f2:null) when (@f2=null) {
+		flex-flow: @f1;
+	}
+	.fl(@f1:row, @f2:null) when not (@f2=null) {
+		flex-flow: @f1 @f2;
+	}
+	// --------------------------------
+	.f(@f:flex) {
+		#FC.flex(@f);
+	}
+	.fh(@h:center, @f:flex) {
+		#FC.flex(@f);
+		#FC.ho(@h);
+	}
+	.fv(@v:center, @f:flex) {
+		#FC.flex(@f);
+		#FC.ve(@v);
+	}
+	.fhv(@h:center, @v:center, @f:flex) {
+		#FC.flex(@f);
+		#FC.ho(@h);
+		#FC.ve(@v);
+	}
+	// --------------------------------
+	.ff(@f1:row, @f2:wrap, @f:flex) {
+		#FC.flex(@f);
+		#FC.fl(@f1, @f2);
+	}
+	.ffh(@f1:row, @f2:wrap, @h:center, @f:flex) {
+		#FC.flex(@f);
+		#FC.fl(@f1, @f2);
+		#FC.ho(@h);
+	}
+	.ffv(@f1:row, @f2:wrap, @v:center, @f:flex) {
+		#FC.flex(@f);
+		#FC.fl(@f1, @f2);
+		#FC.ve(@v);
+	}
+	.ffa(@f1:row, @f2:wrap, @a:center, @f:flex) {
+		#FC.flex(@f);
+		#FC.fl(@f1, @f2);
+		#FC.al(@a);
+	}
+	.ffhv(@f1:row, @f2:wrap, @h:center, @v:center, @f:flex) {
+		#FC.flex(@f);
+		#FC.fl(@f1, @f2);
+		#FC.ho(@h);
+		#FC.ve(@v);
+	}
+	.ffha(@f1:row, @f2:wrap, @h:center, @a:center, @f:flex) {
+		#FC.flex(@f);
+		#FC.fl(@f1, @f2);
+		#FC.ho(@h);
+		#FC.al(@a);
+	}
+	.ffva(@f1:row, @f2:wrap, @v:center, @a:center, @f:flex) {
+		#FC.flex(@f);
+		#FC.fl(@f1, @f2);
+		#FC.ve(@v);
+		#FC.al(@a);
+	}
+	.ffhva(@f1:row, @f2:wrap, @h:center, @v:center, @a:center, @f:flex) {
+		#FC.flex(@f);
+		#FC.fl(@f1, @f2);
+		#FC.ho(@h);
+		#FC.ve(@v);
+		#FC.al(@a);
+	}
+}
+
+/* ================================
+FLEXBOX - FLEXBOX ITEMS
+================================ */
+#FI {
+	// INITIAL
+	.in(@in:none) {
+		-webkit-flex: @in;
+		-moz-flex: @in;
+		-ms-flex: @in;
+		flex: @in;
+	}
+	.in-g(@in:initial) {
+		-webkit-flex-grow: @in;
+		-moz-flex-grow: @in;
+		flex-grow: @in;
+	}
+	.in-s(@in:initial) {
+		-webkit-flex-shrink: @in;
+		-moz-flex-shrink: @in;
+		flex-shrink: @in;
+	}
+	.in-b(@in:initial) {
+		-webkit-flex-basis: @in;
+		-moz-flex-basis: @in;
+		flex-basis: @in;
+	}
+	.in-a(@in:initial) {
+		-webkit-align-self: @in;
+		-moz-align-self: @in;
+		align-self: @in;
+	}
+	.in-o(@in:initial) {
+		-webkit-order: @in;
+		-moz-order: @in;
+		order: @in;
+	}
+	// --------------------------------
+	// FLEX
+	.flex(@g:auto, @s:1, @b:auto) {
+		& when not (isnumber(@g)) {
+			-webkit-flex: @g;
+			-moz-flex: @g;
+			-ms-flex: @g;
+			flex: @g;
+		}
+		& when (isnumber(@g)) {
+			-webkit-flex: @g @s @b;
+			-moz-flex: @g @s @b;
+			-ms-flex: @g @s @b;
+			flex: @g @s @b;
+		}
+	}
+	// GROW
+	.gr(@g:1) {
+		-webkit-flex-grow: @g;
+		-moz-flex-grow: @g;
+		flex-grow: @g;
+	}
+	// SHRINK
+	.sh(@s:1) {
+		-webkit-flex-shrink: @s;
+		-moz-flex-shrink: @s;
+		flex-shrink: @s;
+	}
+	// BASIS
+	.ba(@b:50%) {
+		-webkit-flex-basis: @b;
+		-moz-flex-basis: @b;
+		flex-basis: @b;
+	}
+	// ALIGN - flex-start, flex-end, center, baseline, stretch, auto
+	.al(@a:center) {
+		-webkit-align-self: @a;
+		-moz-align-self: @a;
+		align-self: @a;
+	}
+	// ORDER
+	.or(@o:1) {
+		-webkit-order: @o;
+		-moz-order: @o;
+		order: @o;
+	}
+	// --------------------------------
+	.f(@g:1, @s:1, @b:auto) {
+		#FI.flex(@g, @s, @b);
+	}
+}

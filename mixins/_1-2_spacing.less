@@ -1,0 +1,216 @@
+/* ================================
+SPACING
+================================ */
+// WIDTH
+.w(@w:auto) {
+	width: @w;
+}
+// HEIGHT & LINE HEIGHT
+.h(@h:auto, @lh:null) {
+	& when (@lh=null) {
+		height: @h;
+	}
+	& when not (@lh=null) {
+		height: @h;
+		line-height: @lh;
+	}
+}
+// WIDTH & HEIGHT
+.wh(@w:auto, @h:null, @lh:null) {
+	& when (@h=null) and (@lh=null) {
+		width: @w;
+		height: @w;
+	}
+	& when not (@h=null) and (@lh=null) {
+		width: @w;
+		height: @h;
+	}
+	& when not (@h=null) and not (@lh=null) {
+		width: @w;
+		height: @h;
+		line-height: @lh;
+	}
+}
+// --------------------------------
+// MAX WIDTH
+.mxw(@w:auto) {
+	max-width: @w;
+}
+// MIN WIDTH
+.mnw(@w:auto) {
+	min-width: @w;
+}
+// MAX HEIGHT
+.mxh(@h:auto) {
+	max-height: @h;
+}
+// MIN HEIGHT
+.mnh(@h:auto) {
+	min-height: @h;
+}
+// --------------------------------
+// PADDING
+.p(@p:0) {
+	padding: @p;
+}
+// MARGIN
+.m(@m:0) {
+	margin: @m;
+}
+// PADDING & MARGIN
+.pm(@p:0, @m:null) {
+	& when (@m=null) {
+		padding: @p;
+		margin: @p;
+	}
+	& when not (@m=null) {
+		padding: @p;
+		margin: @m;
+	}
+}
+// --------------------------------
+.pt(@p:0) {
+	padding-top: @p;
+}
+.pb(@p:0) {
+	padding-bottom: @p;
+}
+.pl(@p:0) {
+	padding-left: @p;
+}
+.pr(@p:0) {
+	padding-right: @p;
+}
+.ptb(@t:0, @b:null) {
+	& when (@b=null) {
+		padding-top: @t;
+		padding-bottom: @t;
+	}
+	& when not (@b=null) {
+		padding-top: @t;
+		padding-bottom: @b;
+	}
+}
+.plr(@l:0, @r:null) {
+	& when (@r=null) {
+		padding-left: @l;
+		padding-right: @l;
+	}
+	& when not (@r=null) {
+		padding-left: @l;
+		padding-right: @r;
+	}
+}
+.ptl(@t:0, @l:null) {
+	& when (@l=null) {
+		padding-top: @t;
+		padding-left: @t;
+	}
+	& when not (@l=null) {
+		padding-top: @t;
+		padding-left: @l;
+	}
+}
+.ptr(@t:0, @r:null) {
+	& when (@r=null) {
+		padding-top: @t;
+		padding-right: @t;
+	}
+	& when not (@r=null) {
+		padding-top: @t;
+		padding-right: @r;
+	}
+}
+.pbl(@b:0, @l:null) {
+	& when (@l=null) {
+		padding-bottom: @b;
+		padding-left: @b;
+	}
+	& when not (@l=null) {
+		padding-bottom: @b;
+		padding-left: @l;
+	}
+}
+.pbr(@b:0, @r:null) {
+	& when (@r=null) {
+		padding-bottom: @b;
+		padding-right: @b;
+	}
+	& when not (@r=null) {
+		padding-bottom: @b;
+		padding-right: @r;
+	}
+}
+// --------------------------------
+.mt(@m:0) {
+	margin-top: @m;
+}
+.mb(@m:0) {
+	margin-bottom: @m;
+}
+.ml(@m:0) {
+	margin-left: @m;
+}
+.mr(@m:0) {
+	margin-right: @m;
+}
+.mtb(@t:0, @b:null) {
+	& when (@b=null) {
+		margin-top: @t;
+		margin-bottom: @t;
+	}
+	& when not (@b=null) {
+		margin-top: @t;
+		margin-bottom: @b;
+	}
+}
+.mlr(@l:0, @r:null) {
+	& when (@r=null) {
+		margin-left: @l;
+		margin-right: @l;
+	}
+	& when not (@r=null) {
+		margin-left: @l;
+		margin-right: @r;
+	}
+}
+.mtl(@t:0, @l:null) {
+	& when (@l=null) {
+		margin-top: @t;
+		margin-left: @t;
+	}
+	& when not (@l=null) {
+		margin-top: @t;
+		margin-left: @l;
+	}
+}
+.mtr(@t:0, @r:null) {
+	& when (@r=null) {
+		margin-top: @t;
+		margin-right: @t;
+	}
+	& when not (@r=null) {
+		margin-top: @t;
+		margin-right: @r;
+	}
+}
+.mbl(@b:0, @l:null) {
+	& when (@l=null) {
+		margin-bottom: @b;
+		margin-left: @b;
+	}
+	& when not (@l=null) {
+		margin-bottom: @b;
+		margin-left: @l;
+	}
+}
+.mbr(@b:0, @r:null) {
+	& when (@r=null) {
+		margin-bottom: @b;
+		margin-right: @b;
+	}
+	& when not (@r=null) {
+		margin-bottom: @b;
+		margin-right: @r;
+	}
+}

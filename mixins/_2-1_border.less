@@ -1,0 +1,217 @@
+/* ================================
+BORDER
+================================ */
+#BD {
+	// INITIAL
+	.in(@in:none) {
+		border: @in;
+	}
+	.in-t(@in:none) {
+		border-top: @in;
+	}
+	.in-b(@in:none) {
+		border-bottom: @in;
+	}
+	.in-l(@in:none) {
+		border-left: @in;
+	}
+	.in-r(@in:none) {
+		border-right: @in;
+	}
+	.in-tb(@in:none) {
+		border-top: @in;
+		border-bottom: @in;
+	}
+	.in-lr(@in:none) {
+		border-left: @in;
+		border-right: @in;
+		border-right: @in;
+	}
+	.in-tl(@in:none) {
+		border-top: @in;
+		border-left: @in;
+	}
+	.in-tr(@in:none) {
+		border-top: @in;
+		border-right: @in;
+	}
+	.in-br(@in:none) {
+		border-bottom: @in;
+		border-right: @in;
+	}
+	.in-bl(@in:none) {
+		border-bottom: @in;
+		border-left: @in;
+	}
+	// --------------------------------
+	.w(@w:1px) {
+		border-width: @w;
+	}
+	.c(@c:@c-0, @a:1) {
+		.rgba(@c, @a);
+		border-color: @rgba;
+	}
+	.s(@s:solid) {
+		border-style: @s;
+	}
+	.wc(@w:1px, @c:@c-0) {
+		border-width: @w;
+		border-color: @c;
+	}
+	.ws(@w:1px, @s:solid) {
+		border-width: @w;
+		border-style: @s;
+	}
+	.cs(@c:@c-0, @s:solid) {
+		border-color: @c;
+		border-style: @s;
+	}
+	// --------------------------------
+	// ALPHA
+	#A {
+		// TOP
+		.t(@w:1px, @c:@c-0, @s:solid) {
+			.rgba(@c, @a);
+			border-top: @w @s @rgba;
+		}
+		// BOTTOM
+		.b(@w:1px, @c:@c-0, @s:solid) {
+			.rgba(@c, @a);
+			border-bottom: @w @s @rgba;
+		}
+		// LEFT
+		.l(@w:1px, @c:@c-0, @s:solid) {
+			.rgba(@c, @a);
+			border-left: @w @s @rgba;
+		}
+		// RIGHT
+		.r(@w:1px, @c:@c-0, @s:solid) {
+			.rgba(@c, @a);
+			border-right: @w @s @rgba;
+		}
+		// --------------------------------
+		.tb(@w:1px, @c:@c-0, @s:solid) {
+			#BD#A.t(@w, @c, @s);
+			#BD#A.b(@w, @c, @s);
+		}
+		.lr(@w:1px, @c:@c-0, @s:solid) {
+			#BD#A.l(@w, @c, @s);
+			#BD#A.r(@w, @c, @s);
+		}
+		.tl(@w:1px, @c:@c-0, @s:solid) {
+			#BD#A.t(@w, @c, @s);
+			#BD#A.l(@w, @c, @s);
+		}
+		.tr(@w:1px, @c:@c-0, @s:solid) {
+			#BD#A.t(@w, @c, @s);
+			#BD#A.r(@w, @c, @s);
+		}
+		.br(@w:1px, @c:@c-0, @s:solid) {
+			#BD#A.b(@w, @c, @s);
+			#BD#A.r(@w, @c, @s);
+		}
+		.bl(@w:1px, @c:@c-0, @s:solid) {
+			#BD#A.b(@w, @c, @s);
+			#BD#A.l(@w, @c, @s);
+		}
+		// --------------------------------
+		// ALL
+		.all(@w:1px, @c:@c-0, @s:solid) {
+			.rgba(@c, @a);
+			border: @w @s @rgba;
+		}
+		// --------------------------------
+		// OPERATION
+		.lu(@c:@c-0, @v:100%) {
+			.rgba(tint(@c, @v), @a);
+			border-color: @rgba;
+		}
+		.ld(@c:@c-0, @v:100%) {
+			.rgba(shade(@c, @v), @a);
+			border-color: @rgba;
+		}
+		.su(@c:@c-0, @v:100%) {
+			.rgba(saturate(@c, @v), @a);
+			border-color: @rgba;
+		}
+		.sd(@c:@c-0, @v:100%) {
+			.rgba(desaturate(@c, @v), @a);
+			border-color: @rgba;
+		}
+		.gu(@c:@c-0, @v:100%) {
+			.rgba(greyscale(tint(@c, @v)), @a);
+			border-color: @rgba;
+		}
+		.gd(@c:@c-0, @v:100%) {
+			.rgba(greyscale(shade(@c, @v)), @a);
+			border-color: @rgba;
+		}
+		.h(@c:@c-0, @d:180) {
+			.rgba(spin(@c, @d), @a);
+			border-color: @rgba;
+		}
+		.il(@c:@c-0, @v:100%) {
+			& when (lightness(@c) < 50%) {
+				.rgba(tint(@c, @v), @a);
+				border-color: @rgba;
+			}
+			& when (lightness(@c) >= 50%) {
+				.rgba(shade(@c, @v), @a);
+				border-color: @rgba;
+			}
+		}
+		.is(@c:@c-0, @v:100%) {
+			& when (saturation(@c) < 50%) {
+				.rgba(saturate(@c, @v), @a);
+				border-color: @rgba;
+			}
+			& when (saturation(@c) >= 50%) {
+				.rgba(desaturate(@c, @v), @a);
+				border-color: @rgba;
+			}
+		}
+		.ig(@c:@c-0, @v:100%) {
+			& when (lightness(@c) < 50%) {
+				.rgba(greyscale(tint(@c, @v)), @a);
+				border-color: @rgba;
+			}
+			& when (lightness(@c) >= 50%) {
+				.rgba(greyscale(shade(@c, @v)), @a);
+				border-color: @rgba;
+			}
+		}
+		.ih(@c:@c-0, @d:180, @v:100%) {
+			& when (lightness(@c) < 50%) {
+				.rgba(saturate(tint(spin(@c, @d), @v), 100%), @a);
+				border-color: @rgba;
+			}
+			& when (lightness(@c) >= 50%) {
+				.rgba(saturate(shade(spin(@c, @d), @v), 100%), @a);
+				border-color: @rgba;
+			}
+		}
+	}
+	// --------------------------------
+	.BD-alpha-loop(@i) {
+		& when (@i < 10) {
+			#A@{i} {
+				@a: @i * 0.1;
+				#BD#A;
+			}
+			.BD-alpha-loop(@i + 1);
+		}
+		& when (@i = 0) {
+			#A0 {
+				@a: @i;
+				#BD#A;
+			}
+		}
+		& when (@i = 10) {
+			#AA {
+				@a: 1;
+				#BD#A;
+			}
+		}
+	}
+	.BD-alpha-loop(0);
+}

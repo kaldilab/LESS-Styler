@@ -1,0 +1,59 @@
+/* ================================
+FILTERS
+================================ */
+#FT {
+	// INITIAL
+	.in(@a:none) when (@a=none) {
+		-webkit-filter: @a;
+		filter: @a;
+	}
+	// --------------------------------
+	// BLUR - (0px ~ *)
+	.bl(@a:5px) {
+		-webkit-filter: blur(@a);
+		filter: url("data:image/svg+xml;utf8,<svg xmlns=!string!><filter id=!string!><feGaussianBlur in=!string!stdDeviation=!string!/></filter></svg>#blur");
+		filter: blur(@a);
+	}
+	// GRAYSCALE - (0 ~ 100%)
+	.gr(@a:100%) {
+		-webkit-filter: grayscale(@a);
+		filter: url("data:image/svg+xml;utf8,<svg xmlns=!string!><filter id=!string!><feColorMatrix in=!string!type=!string!values=!string!/></filter></svg>#gray");
+		filter: grayscale(@a);
+	}
+	// SATURATE - (0 ~ 100% ~ *)
+	.sa(@a:125%) {
+		-webkit-filter: saturate(@a);
+		filter: url("data:image/svg+xml;utf8,<svg xmlns=!string!><filter id=!string!><feColorMatrix in=!string!type=!string!values=!string!/></filter></svg>#satu");
+		filter: saturate(@a);
+	}
+	// BRIGHTNESS - (0 ~ 100% ~ *)
+	.br(@a:125%) {
+		-webkit-filter: brightness(@a);
+		filter: url("data:image/svg+xml;utf8,<svg xmlns=!string!><filter id=!string!><feComponentTransfer><feFuncR type=!string!slope=!string!/><feFuncG type=!string!slope=!string!/><feFuncB type=!string!slope=!string!/></feComponentTransfer></filter></svg>#bright");
+		filter: brightness(@a);
+	}
+	// CONTRAST - (0 ~ 100% ~ *)
+	.co(@a:125%) {
+		-webkit-filter: contrast(@a);
+		filter: url("data:image/svg+xml;utf8,<svg xmlns=!string!><filter id=!string!><feComponentTransfer><feFuncR type=!string!slope=!string!intercept=!string!/><feFuncG type=!string!slope=!string!intercept=!string!/><feFuncB type=!string!slope=!string!intercept=!string!/></feComponentTransfer></filter></svg>#cont");
+		filter: contrast(@a);
+	}
+	// HUE-ROTATE (0 ~ 360deg)
+	.hu(@a:30deg) {
+		-webkit-filter: hue-rotate(@a);
+		filter: url("data:image/svg+xml;utf8,<svg xmlns=!string!><filter id=!string!><feColorMatrix type=!string!values=!string!/></filter></svg>#hue");
+		filter: hue-rotate(@a);
+	}
+	// INVERT (0 ~ 100%)
+	.in(@a:none) when not (@a=none) {
+		-webkit-filter: invert(@a);
+		filter: url("data:image/svg+xml;utf8,<svg xmlns=!string!><filter id=!string!><feComponentTransfer><feFuncR type=!string!slope=!string!intercept=!string!/><feFuncG type=!string!slope=!string!intercept=!string!/><feFuncB type=!string!slope=!string!intercept=!string!/></feComponentTransfer></filter></svg>#invert");
+		filter: invert(@a);
+	}
+	// SEPIA - (0 ~ 100%)
+	.se(@a:100%) {
+		-webkit-filter: sepia(@a);
+		filter: url("data:image/svg+xml;utf8,<svg xmlns=!string!><filter id=!string!><feColorMatrix in=!string!type=!string!values=!string!/></filter></svg>#sepia");
+		filter: sepia(@a);
+	}
+}

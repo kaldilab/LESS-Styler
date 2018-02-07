@@ -1,0 +1,297 @@
+/* --------------------------------
+#F01: linear
+#F02: ease
+#F03: ease-in
+#F04: ease-out
+#F05: ease-in-out
+#F06: easeInSine
+#F07: easeOutSine
+#F08: easeInOutSine
+#F09: easeInQuad
+#F10: easeOutQuad
+#F11: easeInOutQuad
+#F12: easeInCubic
+#F13: easeOutCubic
+#F14: easeInOutCubic
+#F15: easeInQuart
+#F16: easeOutQuart
+#F17: easeInOutQuart
+#F18: easeInQuint
+#F19: easeOutQuint
+#F20: easeInOutQuint
+#F21: easeInExpo
+#F22: easeOutExpo
+#F23: easeInOutExpo
+#F24: easeInCirc
+#F25: easeOutCirc
+#F26: easeInOutCirc
+#F27: easeInBack
+#F28: easeOutBack
+#F29: easeInOutBack
+-------------------------------- */
+
+/* ================================
+TRANSITION
+================================ */
+#TT {
+	// INITIAL
+	.in(@in:initial) {
+		transition: @in;
+	}
+	.in-p(@in:initial) {
+		transition-property: @in;
+	}
+	.in-d(@in:initial) {
+		transition-delay: @in;
+	}
+	// --------------------------------
+	// DURATION(Time)
+	.du(@t:.3s) {
+		transition-duration: @t;
+	}
+	// PROPERTY
+	.pr(@p:all) {
+		transition-property: @p;
+	}
+	// DELAY
+	.de(@y:.7s) {
+		transition-delay: @y;
+	}
+	// TIMING FUNCTION
+	.tf(@n1:0, @n2:1, @n3:0, @n4:1) {
+		transition-timing-function: cubic-bezier(@n1, @n2, @n3, @n4);
+	}
+	// --------------------------------
+	.t(@t:.3s) {
+		transition: @t;
+	}
+	.tp(@t:.3s, @p:all) {
+		transition+: @t @p;
+	}
+	.td(@t:.3s, @d:.7s) {
+		transition: @t @d;
+	}
+	.tpd(@t:.3s, @p:all, @d:.7s) {
+		transition+: @t @p @d;
+	}
+	// --------------------------------
+	// FUNCTION
+	#F {
+		.t(@t:.3s, @n1:@cb1, @n2:@cb2, @n3:@cb3, @n4:@cb4) {
+			transition: @t cubic-bezier(@n1, @n2, @n3, @n4);
+		}
+		.tp(@t:.3s, @p:all, @n1:@cb1, @n2:@cb2, @n3:@cb3, @n4:@cb4) {
+			transition+: @t @p cubic-bezier(@n1, @n2, @n3, @n4);
+		}
+		.td(@t:.3s, @d:.7s, @n1:@cb1, @n2:@cb2, @n3:@cb3, @n4:@cb4) {
+			transition: @t @d cubic-bezier(@n1, @n2, @n3, @n4);
+		}
+		.tpd(@t:.3s, @p:all, @d:.7s, @n1:@cb1, @n2:@cb2, @n3:@cb3, @n4:@cb4) {
+			transition+: @t @p @d cubic-bezier(@n1, @n2, @n3, @n4);
+		}
+	}
+	// --------------------------------
+	#F01 {
+		@cb1:0;
+		@cb2:0;
+		@cb3:1;
+		@cb4:1;
+		#TT#F;
+	}
+	#F02 {
+		@cb1:0.25;
+		@cb2:0.1;
+		@cb3:0.25;
+		@cb4:1;
+		#TT#F;
+	}
+	#F03 {
+		@cb1:0.42;
+		@cb2:0;
+		@cb3:1;
+		@cb4:1;
+		#TT#F;
+	}
+	#F04 {
+		@cb1:0;
+		@cb2:0;
+		@cb3:0.58;
+		@cb4:1;
+		#TT#F;
+	}
+	#F05 {
+		@cb1:0.42;
+		@cb2:0;
+		@cb3:0.58;
+		@cb4:0;
+		#TT#F;
+	}
+	#F06 {
+		@cb1:0.470;
+		@cb2:0.000;
+		@cb3:0.745;
+		@cb4:0.715;
+		#TT#F;
+	}
+	#F07 {
+		@cb1:0.390;
+		@cb2:0.575;
+		@cb3:0.565;
+		@cb4:1.000;
+		#TT#F;
+	}
+	#F08 {
+		@cb1:0.445;
+		@cb2:0.050;
+		@cb3:0.550;
+		@cb4:0.950;
+		#TT#F;
+	}
+	#F09 {
+		@cb1:0.550;
+		@cb2:0.085;
+		@cb3:0.680;
+		@cb4:0.530;
+		#TT#F;
+	}
+	#F10 {
+		@cb1:0.250;
+		@cb2:0.460;
+		@cb3:0.450;
+		@cb4:0.940;
+		#TT#F;
+	}
+	#F11 {
+		@cb1:0.455;
+		@cb2:0.030;
+		@cb3:0.515;
+		@cb4:0.955;
+		#TT#F;
+	}
+	#F12 {
+		@cb1:0.550;
+		@cb2:0.055;
+		@cb3:0.675;
+		@cb4:0.190;
+		#TT#F;
+	}
+	#F13 {
+		@cb1:0.215;
+		@cb2:0.610;
+		@cb3:0.355;
+		@cb4:1.000;
+		#TT#F;
+	}
+	#F14 {
+		@cb1:0.645;
+		@cb2:0.045;
+		@cb3:0.355;
+		@cb4:1.000;
+		#TT#F;
+	}
+	#F15 {
+		@cb1:0.895;
+		@cb2:0.030;
+		@cb3:0.685;
+		@cb4:0.220;
+		#TT#F;
+	}
+	#F16 {
+		@cb1:0.165;
+		@cb2:0.840;
+		@cb3:0.440;
+		@cb4:1.000;
+		#TT#F;
+	}
+	#F17 {
+		@cb1:0.770;
+		@cb2:0.000;
+		@cb3:0.175;
+		@cb4:1.000;
+		#TT#F;
+	}
+	#F18 {
+		@cb1:0.755;
+		@cb2:0.050;
+		@cb3:0.855;
+		@cb4:0.060;
+		#TT#F;
+	}
+	#F19 {
+		@cb1:0.230;
+		@cb2:1.000;
+		@cb3:0.320;
+		@cb4:1.000;
+		#TT#F;
+	}
+	#F20 {
+		@cb1:0.860;
+		@cb2:0.000;
+		@cb3:0.070;
+		@cb4:1.000;
+		#TT#F;
+	}
+	#F21 {
+		@cb1:0.950;
+		@cb2:0.050;
+		@cb3:0.795;
+		@cb4:0.035;
+		#TT#F;
+	}
+	#F22 {
+		@cb1:0.190;
+		@cb2:1.000;
+		@cb3:0.220;
+		@cb4:1.000;
+		#TT#F;
+	}
+	#F23 {
+		@cb1:1.000;
+		@cb2:0.000;
+		@cb3:0.000;
+		@cb4:1.000;
+		#TT#F;
+	}
+	#F24 {
+		@cb1:0.600;
+		@cb2:0.040;
+		@cb3:0.980;
+		@cb4:0.335;
+		#TT#F;
+	}
+	#F25 {
+		@cb1:0.075;
+		@cb2:0.820;
+		@cb3:0.165;
+		@cb4:1.000;
+		#TT#F;
+	}
+	#F26 {
+		@cb1:0.785;
+		@cb2:0.135;
+		@cb3:0.150;
+		@cb4:0.860;
+		#TT#F;
+	}
+	#F27 {
+		@cb1:0.600;
+		@cb2:-0.280;
+		@cb3:0.735;
+		@cb4:0.045;
+		#TT#F;
+	}
+	#F28 {
+		@cb1:0.175;
+		@cb2:0.885;
+		@cb3:0.320;
+		@cb4:1.275;
+		#TT#F;
+	}
+	#F29 {
+		@cb1:0.680;
+		@cb2:-0.550;
+		@cb3:0.265;
+		@cb4:1.550;
+		#TT#F;
+	}
+}

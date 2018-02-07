@@ -1,0 +1,196 @@
+/* ================================
+COLOR OPERATION
+================================ */
+// COLOR OPERATION
+#CO {
+	#A {
+		.lu(@c:@c-0, @v:100%) {
+			.rgba(tint(@c, @v), @a);
+			color: @rgba;
+		}
+		.ld(@c:@c-0, @v:100%) {
+			.rgba(shade(@c, @v), @a);
+			color: @rgba;
+		}
+		.su(@c:@c-0, @v:100%) {
+			.rgba(saturate(@c, @v), @a);
+			color: @rgba;
+		}
+		.sd(@c:@c-0, @v:100%) {
+			.rgba(desaturate(@c, @v), @a);
+			color: @rgba;
+		}
+		.gu(@c:@c-0, @v:100%) {
+			.rgba(greyscale(tint(@c, @v)), @a);
+			color: @rgba;
+		}
+		.gd(@c:@c-0, @v:100%) {
+			.rgba(greyscale(shade(@c, @v)), @a);
+			color: @rgba;
+		}
+		.h(@c:@c-0, @d:180) {
+			.rgba(spin(@c, @d), @a);
+			color: @rgba;
+		}
+		.il(@c:@c-0, @v:100%) {
+			& when (lightness(@c) < 50%) {
+				.rgba(tint(@c, @v), @a);
+				color: @rgba;
+			}
+			& when (lightness(@c) >= 50%) {
+				.rgba(shade(@c, @v), @a);
+				color: @rgba;
+			}
+		}
+		.is(@c:@c-0, @v:100%) {
+			& when (saturation(@c) < 50%) {
+				.rgba(saturate(@c, @v), @a);
+				color: @rgba;
+			}
+			& when (saturation(@c) >= 50%) {
+				.rgba(desaturate(@c, @v), @a);
+				color: @rgba;
+			}
+		}
+		.ig(@c:@c-0, @v:100%) {
+			& when (lightness(@c) < 50%) {
+				.rgba(greyscale(tint(@c, @v)), @a);
+				color: @rgba;
+			}
+			& when (lightness(@c) >= 50%) {
+				.rgba(greyscale(shade(@c, @v)), @a);
+				color: @rgba;
+			}
+		}
+		.ih(@c:@c-0, @d:180, @v:100%) {
+			& when (lightness(@c) < 50%) {
+				.rgba(saturate(tint(spin(@c, @d), @v), 100%), @a);
+				color: @rgba;
+			}
+			& when (lightness(@c) >= 50%) {
+				.rgba(saturate(shade(spin(@c, @d), @v), 100%), @a);
+				color: @rgba;
+			}
+		}
+	}
+	// --------------------------------
+	.CO-alpha-loop(@i) {
+		& when (@i < 10) {
+			#A@{i} {
+				@a: @i * 0.1;
+				#CO#A;
+			}
+			.CO-alpha-loop(@i + 1);
+		}
+		& when (@i = 0) {
+			#A0 {
+				@a: @i;
+				#CO#A;
+			}
+		}
+		& when (@i = 10) {
+			#AA {
+				@a: 1;
+				#CO#A;
+			}
+		}
+	}
+	.CO-alpha-loop(0);
+}
+// --------------------------------
+// BACKGROUND-COLOR OPERATION
+#BO {
+	#A {
+		.lu(@c:@c-0, @v:100%) {
+			.rgba(tint(@c, @v), @a);
+			background+_: @rgba;
+		}
+		.ld(@c:@c-0, @v:100%) {
+			.rgba(shade(@c, @v), @a);
+			background+_: @rgba;
+		}
+		.su(@c:@c-0, @v:100%) {
+			.rgba(saturate(@c, @v), @a);
+			background+_: @rgba;
+		}
+		.sd(@c:@c-0, @v:100%) {
+			.rgba(desaturate(@c, @v), @a);
+			background+_: @rgba;
+		}
+		.gu(@c:@c-0, @v:100%) {
+			.rgba(greyscale(tint(@c, @v)), @a);
+			background+_: @rgba;
+		}
+		.gd(@c:@c-0, @v:100%) {
+			.rgba(greyscale(shade(@c, @v)), @a);
+			background+_: @rgba;
+		}
+		.h(@c:@c-0, @d:180) {
+			.rgba(spin(@c, @d), @a);
+			background+_: @rgba;
+		}
+		.il(@c:@c-0, @v:100%) {
+			& when (lightness(@c) < 50%) {
+				.rgba(tint(@c, @v), @a);
+				background+_: @rgba;
+			}
+			& when (lightness(@c) >= 50%) {
+				.rgba(shade(@c, @v), @a);
+				background+_: @rgba;
+			}
+		}
+		.is(@c:@c-0, @v:100%) {
+			& when (saturation(@c) < 50%) {
+				.rgba(saturate(@c, @v), @a);
+				background+_: @rgba;
+			}
+			& when (saturation(@c) >= 50%) {
+				.rgba(desaturate(@c, @v), @a);
+				background+_: @rgba;
+			}
+		}
+		.ig(@c:@c-0, @v:100%) {
+			& when (lightness(@c) < 50%) {
+				.rgba(greyscale(tint(@c, @v)), @a);
+				background+_: @rgba;
+			}
+			& when (lightness(@c) >= 50%) {
+				.rgba(greyscale(shade(@c, @v)), @a);
+				background+_: @rgba;
+			}
+		}
+		.ih(@c:@c-0, @d:180, @v:100%) {
+			& when (lightness(@c) < 50%) {
+				.rgba(saturate(tint(spin(@c, @d), @v), 100%), @a);
+				background+_: @rgba;
+			}
+			& when (lightness(@c) >= 50%) {
+				.rgba(saturate(shade(spin(@c, @d), @v), 100%), @a);
+				background+_: @rgba;
+			}
+		}
+	}
+	// --------------------------------
+	.BO-alpha-loop(@i) {
+		& when (@i < 10) {
+			#A@{i} {
+				@a: @i * 0.1;
+				#BO#A;
+			}
+			.BO-alpha-loop(@i + 1);
+		}
+		& when (@i = 0) {
+			#A0 {
+				@a: @i;
+				#BO#A;
+			}
+		}
+		& when (@i = 10) {
+			#AA {
+				@a: 1;
+				#BO#A;
+			}
+		}
+	}
+	.BO-alpha-loop(0);
+}

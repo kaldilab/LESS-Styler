@@ -1,0 +1,116 @@
+/* ================================
+GRID
+================================ */
+// WRAPPER
+.wrap(@p:relative, @d:block) {
+	.cf();
+	position: @p;
+	display: @d;
+}
+// --------------------------------
+// CONTAINER
+.cont(@w:@sw, @m:max, @p:relative, @d:block, @l:auto, @r:auto) {
+	& when (ispixel(@w)) and (@m=max) {
+		.cf();
+		.mlr(@l, @r);
+		max-width: @w;
+		position: @p;
+		display: @d;
+	}
+	& when (ispixel(@w)) and (@m=min) {
+		.cf();
+		.mlr(@l, @r);
+		min-width: @w;
+		position: @p;
+		display: @d;
+	}
+	& when (ispixel(@w)) and (@m=fix) {
+		.cf();
+		.mlr(@l, @r);
+		width: @w;
+		position: @p;
+		display: @d;
+	}
+	& when not (ispixel(@w)) and (@m=max) {
+		.cf();
+		width: @w;
+		position: @p;
+		display: @d;
+	}
+}
+// --------------------------------
+// GRID
+.bone(@m, @f, @p, @d, @b) {
+	.cf();
+	.bs(@b);
+	float: @f;
+	position: @p;
+	display: @d;
+	margin-left: @m;
+	margin-right: @m;
+}
+// ex) .grid(4) - Division Grid
+.grid(@col:@nc, @m:@dwp, @f:left, @p:relative, @d:block, @b:border-box) {
+	& when (isnumber(@col)) and (@m=@dwp) {
+		.bone(@m, @f, @p, @d, @b);
+		width: (@cwp * @col) + (@gwp * (@col - 1));
+	}
+	& when (isnumber(@col)) and (@m=0) {
+		.bone(@m, @f, @p, @d, @b);
+		width: (@cwp * @col) + (@gwp * (@col - 1)) + (@dwp * 2);
+	}
+}
+// ex) .grid(item) - Flex Grid
+.grid(@col:@nc, @f1:row, @f2:wrap, @f:flex, @p:relative, @b:border-box) when not (isnumber(@col)) {
+	.bs(@b);
+	#FC.flex(@f);
+	#FC.flow(@f1, @f2);
+}
+// --------------------------------
+// PUSH & PULL
+.push(@col:1) {
+	margin-left: ((@cwp * @col) + (@gwp * @col)) + @dwp;
+}
+.pull(@col:1) {
+	margin-right: ((@cwp * @col) + (@gwp * @col)) + @dwp;
+}
+// --------------------------------
+// CHILD
+// ex) .child(12, 3)
+.child(@col:@nc, @c:1, @g:null, @f:left, @p:relative, @d:block, @b:border-box) {
+	& when (@g=null) {
+		@m: 0;
+		.bone(@m, @f, @p, @d, @b);
+		width: (((@cw * 100%) / (@wc * @col)) * @c) + (((@gw * 100%) / (@wc * @col)) * @c);
+	}
+	& when not (@g=null) {
+		@m: (((@dw * 100%) / (@wc * @col)) * @c) - (((@dw * 100%) / (@wc * @col)) * (@c - 1));
+		.bone(@m, @f, @p, @d, @b);
+		width: (((@cw * 100%) / (@wc * @col)) * @c) + (((@gw * 100%) / (@wc * @col)) * (@c - 1));
+	}
+}
+// --------------------------------
+// ITEM
+.item(@b:auto, @m:@dwp, @g:1, @s:1) {
+	// ex) .item(auto), .item(300px)
+	& when (ispixel(@b)), (@b=auto) {
+		#FI.f(@g, @s, @b);
+		margin-left: @m;
+		margin-right: @m;
+	}
+	// ex) .item(2)
+	& when not (ispixel(@b)) and not (ispercentage(@b)) and (isnumber(@b)) {
+		@x: (100% / @b) - (@m * 2);
+		#FI.f(@g, @s, @x);
+		margin-left: @m;
+		margin-right: @m;
+	}
+	// ex) .item(50%) - none
+	& when (ispercentage(@b)) {
+		@x: @b - (@m * 2);
+		#FI.in();
+		width: @x;
+		margin-left: @m;
+		margin-right: @m;
+	}
+}

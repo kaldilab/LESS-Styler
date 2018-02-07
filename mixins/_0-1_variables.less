@@ -1,0 +1,52 @@
+/* ================================
+VARIABLES
+================================ */
+// SCHEME COLOR
+@scheme: @c-0;
+@s-: @scheme;
+// --------------------------------
+// COLOR BLENDING FUNCTION
+@s-angle: 180;
+@s-amount: 50%;
+@s-blend: red;
+// --------------------------------
+@s-gr: greyscale(@scheme);
+@s-co: contrast(@scheme);
+@s-sp: spin(@scheme, @s-angle);
+@s-sa: saturate(@scheme, @s-amount);
+@s-de: desaturate(@scheme, @s-amount);
+@s-ti: tint(@scheme, @s-amount);
+@s-sh: shade(@scheme, @s-amount);
+@s-li: lighten(@scheme, @s-amount);
+@s-da: darken(@scheme, @s-amount);
+@s-fi: fadein(@scheme, @s-amount);
+@s-fo: fadeout(@scheme, @s-amount);
+@s-mu: multiply(@scheme, @s-blend);
+@s-sc: screen(@scheme, @s-blend);
+@s-ov: overlay(@scheme, @s-blend);
+@s-so: softlight(@scheme, @s-blend);
+@s-ha: hardlight(@scheme, @s-blend);
+@s-di: difference(@scheme, @s-blend);
+@s-ex: exclusion(@scheme, @s-blend);
+@s-av: average(@scheme, @s-blend);
+@s-ne: negation(@scheme, @s-blend);
+@s-mi: mix(@scheme, @s-blend, @s-amount);
+// --------------------------------
+// BASIC COLOR
+@c-t: transparent;
+@c-0:#000000;
+@c-1:#111111;
+@c-2:#222222;
+@c-3:#333333;
+@c-4:#444444;
+@c-5:#555555;
+@c-6:#666666;
+@c-7:#777777;
+@c-8:#888888;
+@c-9:#999999;
+@c-a:#aaaaaa;
+@c-b:#bbbbbb;
+@c-c:#cccccc;
+@c-d:#dddddd;
+@c-e:#eeeeee;
+@c-f:#ffffff;
