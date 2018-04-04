@@ -114,6 +114,10 @@ SHORTCUT
 .re(@r:none) {
 	resize: @r;
 }
+// POINT EVENTS
+.pe(@p:none) {
+	pointer-events: @p;
+}
 // --------------------------------
 // TEXT ALIGN
 .ta(@x:in, @t:initial) {
@@ -169,6 +173,12 @@ SHORTCUT
 	}
 	& when (@x=li) {
 		display: list-item;
+	}
+	& when (@x=t) {
+		display: table;
+	}
+	& when (@x=tc) {
+		display: table-cell;
 	}
 	& when (@x=n) {
 		display: none;
