@@ -1,18 +1,10 @@
-# Only Styling with LESS!
+## LESSPainter
 
-LESS-Styler는 CSS 스타일링 작업을 도와주는 LESS 믹스인 라이브러리(LESS Mixin Library)이자 LESS 스타일링 시스템(LESS Styling System)입니다. 하나의 컬러로 다른 모든 컬러를 제어하는 LESS-Styler의 Color System으로 색채 설계의 아이디어도 얻을 수 있습니다.
+<p>일반적으로 웹디자인에서의 색채는 한두 가지 컬러의 명도나 채도 등을 조절하여 결정한다. 즉, 중심이 되는 컬러가 있고 이를 변형한 주변 컬러로 색채를 구성하게 된다. LESSPainter는 이 중심이 되는 <strong>컬러와의 상관 관계</strong>에 주목하여 하나의 색으로 모든 색을 제어한다는 컨셉을 가지고 있다.</p>
 
-<a align="center" href="http://kaldilab.com"><img width="100%" src="http://iiago.cdn2.cafe24.com/images/github.jpg" alt="Kaldi Lab - LESS Styler"></a>
+<p>본 페이지 'Canvas' 챕터 상단의 <strong>요술봉 아이콘을 클릭</strong>하거나 폼 필드에 컬러 코드(HEX)나 컬러 네임(140색), 또는 'random'을 입력해보자. 컬러가 바뀌며 하단의 웹페이지 디자인 형태의 컨테이너 컬러도 바뀌는 걸 확인할 수 있다. 이것은 사전에 설계된 <strong>색채 관계</strong>에 의한 결과이다. 각 요소별 컬러가 하나의 중심 컬러와의 관계를 통해 결정된 것이라면, 기준이 되는 중심 컬러 하나만 수정하면 연관된 모든 요소의 컬러를 수정할 수 있는 것이다.</p>
 
-> LESS Mixin Library & LESS Styling System `v1.0.4`
-
-## LESS-Styler
-
-LESS-Styler 모든 CSS 속성을 일정한 규칙에 의해 극단적으로 단순화시킨 믹스인을 호출하여 사용합니다. 최초 제작보다 유지보수에 더 초점을 맞춰 문자 한두 개만 수정하면 속성이 변경되도록 믹스인을 선언했습니다. 코딩 속도 향상에 도움이 될 것입니다.
-
-## Color System
-
-LESS-Styler는 색상 함수를 적극적으로 사용하여 컬러 하나로 웹사이트 전체의 컬러를 조절하고자 합니다. LESS-Styler의 색상 체계(Color System)는 컬러 선택에 대한 고민의 시간을 단축하고 더 효율적으로 컬러를 관리하기 위한 시스템이라 할 수 있습니다.
+<p>여러 색채 설계 관련 툴이나 사이트를 참조하여 디자인 작업 시에 적용할 수 있는 이 과정을 LESS 전처리기로 시도해보았다. 디자인 작업 시에 <strong>영감을 얻거나 의도치 않게 우연의 색채 설계를 경험</strong>할 수도 있다. <strong>새로운 컬러를 고민하지 말고 기계적으로 컬러를 선택</strong>해보자는 의도가 반영되어 있다. 좋은 디자인 컬러는 내적 심미성을 확보한 이후에는 그것에 의미를 부여하기 나름이다. 이럴 땐 감각에 의지하기보다는 정해진 패턴을 따르는 것도 좋을 것이다.</p>
 
 ## Usage
 
@@ -38,9 +30,6 @@ Your Project/
 
 ## Kaldi Lab
 
-[Kaldi Lab](http://kaldilab.com/)의 LESS-Styler Website의 설명을 참고하세요.
+[Kaldi Lab](http://kaldilab.com/)의 LESSPainter Website의 설명을 참고하세요.
 
-- [LESS-Styler](http://kaldilab.com/less_styler/)
-- [Color System](http://kaldilab.com/color_system/)
-- [Palette](http://kaldilab.com/palette/)
-- [Canvas](http://kaldilab.com/canvas/)
+- [LESSPainter](http://kaldilab.com/LESSPainter/)
